@@ -11,6 +11,13 @@
   <remote  name="github"
            fetch="git://github.com/" />
 
+  <remote  name="flowdata-github"
+                 fetch="git://github.com/flowdata/" />
+
+   <remote  name="flowdata-bitbucket"
+                  fetch="ssh://git@git.bitbucket.org/flowdatainc/" />
+
+
   <default revision="refs/tags/android-4.4.3_r1"
            remote="aosp"
            sync-j="4" />
@@ -18,12 +25,13 @@
   <!-- Gateworks kernel and u-boot -->
   <project path="kernel_imx" name="linux-imx6" revision="gateworks_kk4.4.3_2.0.0-ga" remote="gateworks-github" />
   <project path="bootable/bootloader/uboot-imx" name="u-boot-imx6" revision="gateworks_v2014.04" remote="gateworks-github" />
+  <project path="system/core/coreshim" name="coreshim" revision="master" remote="flowdata-bitbucket" />
 
   <!-- Gateworks device layer -->
-  <project path="device/gateworks" name="android_device_gateworks" revision="imx_kk4.4.3_2.0.0-ga" remote="gateworks-github" groups="pdk" />
+  <project path="device/flowdata" name="android_device_gateworks" revision="imx_kk4.4.3_2.0.0-ga" remote="flowdata-github" groups="pdk" />
 
   <!-- Gateworks patches to other (OpenSource) components -->
-  <project path="build" name="android_build" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" groups="pdk" >
+  <project path="build" name="android_build" remote="flowdata-github" revision="imx_kk4.4.3_2.0.0-ga" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="system/core" name="android_system_core" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
@@ -60,7 +68,7 @@
   <project path="external/iptables" name="android_external_iptables" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/kernel-headers" name="android_external_kernel-headers" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/linux-tools-perf" name="android_external_linux-tools-perf" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
-  <project path="bootable/recovery" name="android_bootable_recovery" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="flowdata-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="dalvik" name="platform-dalvik" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/chromium_org" name="platform-external-chromium_org" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
   <project path="external/ppp" name="android_external_ppp" remote="gateworks-github" revision="imx_kk4.4.3_2.0.0-ga" />
